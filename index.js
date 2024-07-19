@@ -11,13 +11,13 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(express.static("dist"))//backent ch kontch folder access nhi krta yet kraych asel tr static lavtat
 app.use(cors({
-    origin: process.env.MONGO_URL === "development" ? "http://localhost:5173" : "live-server",
+    origin: process.env.MONGO_URL === "development" ? "http://localhost:5173" : process.env.LIVE_SEVER,
     credentials: true,
 }))//credentials: true in CORS allows cross-origin requests 
 //to include cookies, crucial for user sessions and authentication.
 
 //ROUTES
-app.use("/api/v1/admin", require("./routes/auth.routes"))
+app.use("/api/auth", require("./routes/auth.routes"))
 
 
 app.use("*", (req, res) => {
