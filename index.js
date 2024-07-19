@@ -17,7 +17,7 @@ app.use(cors({
 //to include cookies, crucial for user sessions and authentication.
 
 //ROUTES
-// app.use("/api/v1/super-admin", superAdminProtected, require("./routes/superAdmin.routes"))
+app.use("/api/v1/admin", require("./routes/auth.routes"))
 
 
 app.use("*", (req, res) => {
