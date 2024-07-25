@@ -8,7 +8,7 @@
     "npm": "10.2.3"
   },
   "scripts": {
-    "start": "node index",
+    "start": "expo start ",
     "dev": "nodemon index.js"
   },
   "keywords": [],
